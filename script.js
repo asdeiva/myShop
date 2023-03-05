@@ -36,7 +36,7 @@ function signup() {
         // Saving
         localStorage.setItem("users", JSON.stringify(users));
         console.log("user added");
-        window.location.href = "login.html";
+        window.location.href = "./login.html";
       } else {
         alert("<== Email already registered please signin ==>");
       }
@@ -83,7 +83,7 @@ function login() {
 
       localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
-      window.location.href = "/shop/index.html";
+      window.location.href = "./shop/index.html";
       //   displayinfo(crntUsrData.username,crntUsrData.email);
     }
   } else {

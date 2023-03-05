@@ -25,7 +25,7 @@ console.log(total);
     "handler": function (response){
         localStorage.removeItem("cart");
         console.log(response.razorpay_payment_id);
-        // window.location.hred = "../shop/index.html"
+        // window.location.href = "../shop/index.html"
       }
   };
 
@@ -33,6 +33,7 @@ console.log(total);
   rzpy1.open();
   rzpy1.on('payment.failed', function (response){
     console.log(response);
+    alert("Payment Failed:",response, "\n please Retry payment")
 })
   
   // clear mycart - localStorage
