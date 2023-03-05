@@ -8,7 +8,10 @@
 //   image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
 //   rating: { rate: 3.9, count: 120 },
 // };
-location.reload()
+setTimeout(()=>{
+  location.reload()
+},2000)
+
 
 var data = JSON.parse(sessionStorage.getItem("data") || "[]");
 var cart = JSON.parse(localStorage.getItem("cart") || "[]");
