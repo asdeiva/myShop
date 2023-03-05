@@ -43,6 +43,7 @@ function changePass() {
 function logout() {
   window.location.href = "./index.html";
   localStorage.removeItem("currentUser");
+  location.reload()
 }
 
 function displayinfo(name, email) {

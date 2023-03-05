@@ -62,7 +62,7 @@ function removeFromCart(id) {
 }
 
 function payNow() {
-  window.location.href = "./razorpay/index.html";
+  window.location.href = "../razorpay/index.html";
 }
 
 if (!data.length) {
