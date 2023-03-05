@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Profile</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <nav>
+      <div class="brand">
+        <a href="/">MyShop.</a>
+      </div>
+      <div class="nav-items">
+        <a href="/">Home</a>
+        <a href="./login.html" id="loginLink">Login</a>
+        <a href="./index.html" id="signupLink">Sign Up</a>
+        <a href="../profile/index.html">Profile</a>
+        <a href="/cart/">My Cart</a>
+      </div>
+    </nav>
+
+    <!-- <div class="navbar">
+      <div class="title">
+        <a href="#"> Teacher Portal</a>
+      </div>
+      <div class="links">
+        <a href="./index.html" id="signupLink">Sign Up</a>
+        <a href="./login.html" id="loginLink">Login</a>
+      </div>
+    </div> -->
+
+    <div class="signup">
+      <div class="signup-title">
+        <h6>Profile Dashboard</h6>
+      </div>
+      <div id="greet">
+        <!-- <p>Welcome Back <span id="txt1"></span></p> <p>Your Email ID : <span id="txt2"></span></p> -->
+      </div>
+      <br />
+      <div class="signUpForm">
+        <h3>Profile Dashboard</h3>
+        <form>
+          <div class="fname">
+            <input
+              type="text"
+              name="fname"
+              id="fname"
+              placeholder="First Name"
+            />
+          </div>
+          <div class="lname">
+            <input
+              type="text"
+              name="lname"
+              id="lname"
+              placeholder="Last Name"
+            />
+          </div>
+          <div class="password">
+            <input
+              type="text"
+              name="OldPassword"
+              id="OldPassword"
+              placeholder="Old Password"
+            />
+          </div>
+          <div class="password">
+            <input
+              type="password"
+              name="NewPassword"
+              id="NewPassword"
+              placeholder="New Password"
+            />
+          </div>
+          <div class="cpassword">
+            <input
+              type="password"
+              name="cNewPassword"
+              id="cNewPassword"
+              placeholder="Confirm  New Password"
+            />
+          </div>
+          <div class="signupBtn">
+            <!-- <button id="changePass" class="btn">Change</button> <br> <br>
+                    <button id="logoutBtn" class="btn">Logout</button> -->
+            <input
+              type="button"
+              class="btn"
+              value="Change"
+              onclick="changePass()"
+            />
+            <br />
+            <input
+              type="button"
+              class="btn"
+              value="Logout"
+              onclick="logout()"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
