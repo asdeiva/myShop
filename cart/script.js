@@ -1,5 +1,6 @@
 var data = JSON.parse(localStorage.getItem("cart") || "[]");
-let checkout = document.getElementById('checkout')
+let checkout = document.getElementById("checkout");
+let mgs = document.querySelector('.empty')
 
 console.log(data);
 // {
@@ -8,16 +9,16 @@ console.log(data);
 //     "price": 109.95
 // }
 
-fetchProduct(data)
+fetchProduct(data);
 
 function fetchProduct(data) {
-    var output = document.getElementById('cartItems')
-    var checkitems = document.getElementById('checkitems')
-    checkitems.innerHTML = "";
-    output.innerHTML = "";
-    var totalprice = 0
-    for (var i = 0; i < data.length; i++) {
-      var product = `
+  var output = document.getElementById("cartItems");
+  var checkitems = document.getElementById("checkitems");
+  checkitems.innerHTML = "";
+  output.innerHTML = "";
+  var totalprice = 0;
+  for (var i = 0; i < data.length; i++) {
+    var product = `
                         <div class="item">
                           <img src="${data[i].image}" alt="Item" />
                           <div class="info">
@@ -38,37 +39,45 @@ function fetchProduct(data) {
         
 
     
-                `
-                checkitems.innerHTML += items;
+                `;
+    checkitems.innerHTML += items;
+  }
 
-    }
-  
-    document.getElementById('total').innerHTML = totalprice;
-    var payment = JSON.parse(localStorage.getItem("payment") || "[]");
-    payment.push(totalprice)
-    localStorage.setItem("payment",JSON.stringify(payment))
+  document.getElementById("total").innerHTML = totalprice;
+  var payment = JSON.parse(localStorage.getItem("payment") || "[]");
+  payment.push(totalprice);
+  localStorage.setItem("payment", JSON.stringify(payment));
+}
+
+function removeFromCart(id) {
+  var results = data.filter((obj) => obj.id == id);
+  var toRm = results;
+  data.splice(
+    data.findIndex((a) => a.id === toRm.id),
+    1
+  );
+  localStorage.setItem("cart", JSON.stringify(data));
+  location.reload();
+  console.log(data);
+}
+
+function payNow() {
+  window.location.href = "/razorpay/index.html";
+}
+
+if (!data.length) {
+  // alert("<<== No Items In Your Cart Shop somthing==>>");
+  // window.location.href = "../shop/index.html";
+  document.querySelector('#main').style.display = 'none'
+  document.getElementById('gotoShop').addEventListener('click',(e)=>{
+    window.location.href = "../shop/index.html";
     
-  }
-
-  function removeFromCart(id){
-    var results = data.filter((obj) => obj.id == id);
-    var toRm = results;
-    data.splice(data.findIndex(a => a.id === toRm.id) , 1)
-    localStorage.setItem("cart",JSON.stringify(data));
-    location.reload();
-    console.log(data);
-  }
-
-  function payNow(){
-    if(!data.length){
-      alert("<<== No Items In Your Cart \n Shop somthing==>>")
-      window.location.href = "../shop/index.html"
-    }
-    else{
-      window.location.href = "/razorpay/index.html"
-    }
-    
-  }
+    e.preventDefault();
+  })
+}
+else{
+  mgs.style.display = "none"
+  document.querySelector('#main').style.display = 'flex'
   
-
+}
 //   <h6>Total:  $${totalprice}</h6>
