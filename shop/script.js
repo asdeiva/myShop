@@ -37,7 +37,7 @@ function addToCart(id){
   console.log("Add to cart clicked");
 }
 
-location.reload()
+// location.reload()
 
 console.log(cart);
 let url = "https://fakestoreapi.com/products";
