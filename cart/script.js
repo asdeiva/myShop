@@ -18,23 +18,26 @@ function fetchProduct(data) {
   output.innerHTML = "";
   var totalprice = 0;
   for (var i = 0; i < data.length; i++) {
+  let INR = Math.round(data[i].price * 81.76);
+
     var product = `
                         <div class="item">
                           <img src="${data[i].image}" alt="Item" />
                           <div class="info">
                           <div class="price">${data[i].title}</div> <br>
                             <div class="row">
-                              <div class="price">$${data[i].price}</div>
+                              <div class="price">Rs.${INR}</div>
                             </div>
                             <button id="rmBtn" onclick="removeFromCart(${data[i].id})">Remove From Cart</button>
                         `;
     output.innerHTML += product;
-    totalprice += parseInt(data[i].price);
+    totalprice += parseInt(INR);
     // let nameArr = data[i.title].split(' ')
     // console.log(nameArr);
+
     var items = `
                 <li>
-                ${data[i].title} $${data[i].price}
+                ${data[i].title} Rs.${INR}
                 </li>
         
 

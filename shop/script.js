@@ -141,6 +141,7 @@ function fetchProduct(data) {
   var products = document.getElementById("test");
   products.innerHTML = "";
   for (var i = 0; i < data.length; i++) {
+    let INR = Math.round(data[i].price * 81.76);
     var product = `
                       <div class="item">
                         <img src="${data[i].image}" alt="Item" />
@@ -148,7 +149,7 @@ function fetchProduct(data) {
                         <div class="price">${data[i].title}</div> <br>
                           <div class="row">
                           
-                            <div class="price">$${data[i].price}</div>
+                            <div class="price">Rs.${INR}</div>
                             <div class="sized">${data[i].sizes[0]},${data[i].sizes[1]},${data[i].sizes[2]},${data[i].sizes[3]}</div>
                           </div>
                           <div class="colors">
